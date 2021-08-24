@@ -22,7 +22,7 @@ def getPath(path):
     else:
         start = time.time()
         key = len(queue)
-        queue.append({'path':path,'key':key})
+        queue.append({'path':path,'key':key,'output':''})
         while time.time()-start <= 5:
             output = queue[key]['output']
             if output != '':
