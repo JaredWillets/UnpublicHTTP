@@ -9,6 +9,7 @@ This program does have some major security issues which I aim to repair shortly.
 ### Instructions
 
 0. Installation
+
     0.1 install Flask on your public server (```pip install flask```)
 
 1. You start by adding and running the public-server.py file on the server, preferrably with an Apache and Flask configuration with this file renamed to __init__.py. (Not doing this can lead to problems because the server that comes with the file is just for debugging)
