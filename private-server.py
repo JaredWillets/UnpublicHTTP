@@ -11,7 +11,7 @@ returnPath = 'return' ## Same as the line above
 while True:
     
     try:
-        requestGiven = requests.post(publicServerAddress+queuePath, data={'password':'password'}).text
+        requestGiven = decrypt(requests.post(publicServerAddress+queuePath, data={'password':'password'}).text)
         command = json.loads(requestGiven)
         output = routing.run(command['path'])
         response = requests.post(publicServerAddress+returnPath, data = {'output':output,'processingKey':command['processingKey']}).text
