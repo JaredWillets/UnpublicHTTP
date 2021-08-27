@@ -1,4 +1,7 @@
 # UnpublicHTTP
+
+**NOT FOR PRODUCTION USE, YET**
+
 This is a program that is meant to be used between a public and private server in order to remove the need for port forwarding.
 
 This program works by intercepting all traffic through the public server and adding it to a queue, which can be taken by the private server or multiple private servers and returns the desired output in a similar way to Flask. A fortunate
@@ -6,7 +9,7 @@ side efffect of this program is that it can be used to make a more scalable syst
 
 This program does have some major security issues which I aim to repair shortly. If you notice anything in particular that should be encrypted or secured, please let me know through email or GitHub.
 
-### Instructions
+## **Instructions**
 
 1. Installation
 
@@ -27,3 +30,15 @@ This program does have some major security issues which I aim to repair shortly.
 7. Try things out, experiment, and enjoy! Please, truly, absolutely, contact me at willetsjared@gmail.com or on GitHub if you need anything with this. I know that this is a work in progress and the code is not that great and I am open to criticism and suggestions. Seriously, I have thick skin.
 
 8. Keep in mind that this is a project that was just started less than a week ago and needs large amounts of revision, more updates are coming soon to fix the issues. If you see something major that does not work in this, let me know.
+## **Encryption**
+0. Ensure that you have the Python RSA module installed on both the public and private servers (```pip install rsa```)
+1. Ensure that encryption.py file is in the same directory as both public-server.py on the public server and private-server.py on the private server. 
+2. Use the key generator by running key_maker.py
+3. It is preffered that you use a power of two as the number of bits in your encryption when generating the keys. It is also recommended to bring the number of bits as high as possible.
+4. Add the public and private keys (PubKey,PrivKey) files to both of the directories of your servers.  
+5. Only now should you change the variables in the code of public-server.py and private-server.py so that ```encrypt = True```
+6. IT IS HIGHLY RECOMMENDED THAT YOU USE ENCRYPTION, ESPECIALLY WHEN PEOPLE'S DATA IS BEGIN SENT THROUGH HERE!
+
+## **DISCLAIMER**
+
+I am not responsible for data loss, theft, or any other consequences of using this code on a machine that is not owned by me. I do not recommend using this is a production environment. If you choose to do so, you do so at your own risk. With that being said, I would like to know if this causes problems so that I can create a better program to contribute to this great community.
