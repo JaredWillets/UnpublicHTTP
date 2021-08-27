@@ -1,6 +1,7 @@
 import requests
 import time
 from flask import Flask, request
+import encryption
 
 queueRoute = '[ Insert the path that you would like for the queue ]' ## Replace this or the program will fail
 queue = [] ## This will be used to store the requests that have not been processed
@@ -20,7 +21,7 @@ def getPath(path):
                 queue.pop(0)
             except:
                 requested = ''
-            return requested
+            return encrypt(requested)
         else:
             return 'incorrect queue password'
     elif (path == f'{queueRoute}' or path == f'{returnRoute}') and not request.method=='POST':
