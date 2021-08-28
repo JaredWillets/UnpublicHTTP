@@ -31,13 +31,13 @@ This program does have some major security issues which I aim to repair shortly.
 
 8. Keep in mind that this is a project that was just started less than a week ago and needs large amounts of revision, more updates are coming soon to fix the issues. If you see something major that does not work in this, let me know.
 ## **Encryption**
-0. Ensure that you have the Python RSA module installed on both the public and private servers (```pip install rsa```)
-1. Ensure that encryption.py file is in the same directory as both public-server.py on the public server and private-server.py on the private server. 
-2. Use the key generator by running key_maker.py
-3. It is preffered that you use a power of two as the number of bits in your encryption when generating the keys. It is also recommended to bring the number of bits as high as possible.
-4. Add the public and private keys (PubKey,PrivKey) files to both of the directories of your servers.  
-5. Only now should you change the variables in the code of public-server.py and private-server.py so that ```encrypt = True```
-6. IT IS HIGHLY RECOMMENDED THAT YOU USE ENCRYPTION, ESPECIALLY WHEN PEOPLE'S DATA IS BEGIN SENT THROUGH HERE!
+1. Ensure that you have the Python RSA module installed on both the public and private servers (```pip install rsa```)
+2. Ensure that encryption.py file is in the same directory as both public-server.py on the public server and private-server.py on the private server. 
+3. Use the key generator by running key_maker.py
+4. It is preffered that you use a power of two as the number of bits in your encryption when generating the keys. It is also recommended to bring the number of bits as high as possible.
+5. Add the public and private keys (PubKey,PrivKey) files to both of the directories of your servers.  
+6. Only now should you change the variables in the code of public-server.py and private-server.py so that ```encrypt = True```
+7. IT IS HIGHLY RECOMMENDED THAT YOU USE ENCRYPTION, ESPECIALLY WHEN PEOPLE'S DATA IS BEGIN SENT THROUGH HERE!
 
 ## **DISCLAIMER**
 
