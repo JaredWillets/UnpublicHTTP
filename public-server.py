@@ -36,7 +36,7 @@ def getPath(path):
     else:
         start = time.time()
         key = len(processing)
-        queue.append({'path':path,'processingKey':key,'data':''})
+        queue.append({'path':path,'processingKey':key,data:{'args':request.args,'form':request.form,'files':request.files,'json':request.json}})
         processing.append({'path':path,'output':''})
         while time.time()-start <= 5:
             output = processing[key]['output']
