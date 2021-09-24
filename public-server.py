@@ -40,7 +40,7 @@ def getPath(path):
         queue.append({
             'path':path,
             'processingKey':key,
-            data:encryption.encrypt(str(form_data))
+            'data':encryption.encrypt(str(form_data))
         })
         processing.append({'path':path,'output':''})
         while time.time()-start <= 5:
