@@ -36,10 +36,15 @@ def getPath(path):
     else:
         start = time.time()
         key = len(processing)
-        queue.append({'path':path,'processingKey':key,'data':''})
+        form_data = {'args':request.args,'form':request.form,'files':request.files,'json':request.json}
+        queue.append({
+            'path':path,
+            'processingKey':key,
+            'data':encryption.encrypt(str(form_data))
+        })
         processing.append({'path':path,'output':''})
         while time.time()-start <= 5:
-            output = processing[key]['output']
+            output = encryption.decrypt(processing[key]['output'])
             if output != '':
                 processing[key] = int()
                 return output
