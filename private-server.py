@@ -17,8 +17,8 @@ while True:
         if encrypt:
             requestGiven = encryption.decrypt(requestGiven)
         command = json.loads(requestGiven)
-        output = routing.run(command['path'], form_data=command['data'])
-        response = requests.post(publicServerAddress+returnPath, data = {'output':output,'processingKey':command['processingKey']}).text
+        output = routing.run(command['path'], data=json.loads(encryption.decrypt(command['data'])))
+        response = requests.post(publicServerAddress+returnPath, data = encryption.encrypt(str({'output':output,'processingKey':command['processingKey']}))).text
         if response != 'ok':
             print('Objective from the queue was not handled correctly')
         else:

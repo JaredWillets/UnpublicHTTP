@@ -44,7 +44,7 @@ def getPath(path):
         })
         processing.append({'path':path,'output':''})
         while time.time()-start <= 5:
-            output = processing[key]['output']
+            output = encryption.decrypt(processing[key]['output'])
             if output != '':
                 processing[key] = int()
                 return output
